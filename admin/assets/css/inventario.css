@@ -1,0 +1,122 @@
+
+/* OPCIÓN - PRODUCTOS */
+.productos{
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+  overflow-y: auto;
+  overflow: hidden !important;
+}
+.utilidades{
+  display: grid;
+  grid-template-columns: 70% 20% 10%;
+  align-items: center;
+  justify-items: space-between;
+  gap: 1rem;
+  /* margin-bottom: 1rem; */
+}
+.titulo{
+  text-align: left;
+  /* margin-bottom: 1rem; */
+  font-family: "Zalando Sans SemiExpanded", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  white-space: nowrap;
+  color: black;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+.segundo{
+  display: flex;
+  align-items: center;
+}
+.segundo svg{
+  width: 3.5rem;
+  height: 3.5rem;
+  fill:  rgba(108, 68, 172, 0.906);
+  cursor: pointer;
+}
+#busqueda{
+  opacity: 0;
+  pointer-events: none;
+  height: 2.2rem;
+  padding: 0.5rem;
+  border-radius: .8rem;
+  border: 2px solid rgba(108, 68, 172, 0.906);
+  transition: opacity 0.3s ease-in-out;
+}
+.segundo:hover #busqueda{
+  opacity: 1;
+  pointer-events: auto;
+  background-color: white;
+  outline: none;
+}
+.tercero{
+  width: 3.6rem;
+}
+#btnAgregarProducto{
+  width: 3.5rem;
+  height: 3.5rem;
+  fill:  rgba(108, 68, 172, 0.906);
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.426);
+  background-color: rgba(255, 255, 255, 0.24);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, background-color 0.3s ease-in-out;
+}
+#btnAgregarProducto:hover{
+  transform: rotate(180deg);
+  background-color: rgba(255, 255, 255, 0.921);
+}
+
+.tabla-scroll {
+  max-height: 60rem; /* altura máxima antes de hacer scroll */
+  overflow-y: auto;  /* scroll vertical */
+  border-radius: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.483);
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.tabla-productos{
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border-collapse: separate; /* importante para que funcione border-spacing */
+  border-spacing: 10px 30px;    /* horizontal 0px, vertical 10px */
+  table-layout: fixed;
+}
+.productos-header{
+  border: 1px solid white;
+  color: black;
+  font-weight: bold;  
+}
+#tablaProductos td:nth-child(1),td:nth-child(14){
+  display: none;
+}
+.productos-titulos th:nth-child(1), th:nth-child(14){
+  display: none;
+}
+/* Filas */
+.productos-titulos {
+  width: auto;
+}
+/* contenido de celdas */
+#tablaProductos td{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 20px;
+  max-width: 100px;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  text-align: center;
+}
+/* Celdas */
+.productos-titulos th {
+  width: auto;
+  height: auto;
+  background-color: rgba(108, 68, 172, 0.906);
+  border-radius: 1rem;
+  color: white;
+}

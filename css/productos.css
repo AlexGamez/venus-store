@@ -1,0 +1,1410 @@
+/* Estilos Generales */
+* {
+  margin: 0;
+  padding: 0;
+  }
+body {
+  background-color: #F8F5F0  !important;
+  overflow-y: auto !important;
+  padding-right: 0 !important;
+}
+
+a {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+input[type="checkbox"] {
+  transform: scale(1.5); /* Aumenta el tamaño 1.5 veces */
+  margin-right: 5px; /* Espacio entre el checkbox y el texto */
+}
+img{
+  cursor: pointer !important;
+}
+
+/* ========================================== */
+/*Configuración del botón Whstp*/
+/* ========================================== */
+.whatsapp_float {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 100;
+}
+.whatsapp_float img { /*Aquí configuramos la estética de la imagen o ícono*/
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  border-radius: 50%;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ========================================== */
+/* Aquí se trabaja el carrusel de texto */
+/* ========================================== */
+.carousel-container {
+  display: flex;
+  top: 0;
+  width: 100%;
+  height: 2.6rem;
+  overflow: hidden;
+  text-align: center;
+  z-index: 1000; /* Asegura que quede arriba */
+  align-items: center;
+  justify-content: center;
+}
+.carousel-text {
+  position: absolute;
+  width: 50%;
+  opacity: 1;
+  transition: transform 0.7s ease-out, opacity 0.5s ease-out;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: white;
+  font-size: 0.9rem;
+}
+
+
+/* ========================================== */
+/*HEADER*/
+/* ========================================== */
+.custom-header {
+  align-items:center;
+  background-color: #F8F5F0;
+  position: relative;
+  z-index: 100;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  max-height: 6rem;
+  min-height: 6rem;
+}
+.titulo{
+  font-family: "Merienda", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  border-radius: 20px 20px 20px 20px;
+  border: 2px solid black;
+  padding: 2px;
+}
+i {
+    font-size: 1.8rem;
+    color: black;
+}
+#navbarNav a{  
+  border: solid 1px transparent;
+  transition: all 0.2s ease-in-out;
+  padding-bottom: 2px;
+  opacity: 0.9;
+}
+#navbarNav a:hover{
+  border-bottom: #00000035 1px solid;
+  transform: translateY(-3px);
+  cursor: pointer;
+  opacity: 1;
+}
+/* Para los íconos llamados de otra web dentro del header*/
+.bi{
+    cursor: pointer !important;
+}
+/* el numerito indicador del carrito */
+.carrito-burbuja {
+  position: absolute;
+  top: 0rem !important;
+  right: 2.2rem;
+  background: black;
+  color: white;
+  border-radius: 1.5rem;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: bold;
+  display: none;
+}
+
+/* Ahora la caja del buscador de productos */
+#search-suggest{
+  width: 105%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-left: -6px;
+  background-color: #f8f3f0;
+  border-radius: 4px;
+  z-index: 2;
+  max-height: 100px;            /* colapsado */
+  transform-origin: top;
+  transform: scaleY(0.98);  /* pequeña escala inicial */
+  transition: max-height 0.28s ease, opacity 0.18s ease, transform 0.18s ease;
+  opacity: 0.9;
+}
+#search-suggest.abierto {
+  max-height: 500px;
+  overflow-y: hidden;
+  transform: scaleY(1);
+  opacity: 1;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+#search-suggest :not(p):hover{
+  background-color: #e0e0e0;
+  transition: all 0.2s ease-in;
+}
+.sugerencia{
+  display: flex;
+  width: 100%;
+  padding: 0.4rem 0.6rem;
+  align-items: center;
+  opacity: 0.5;
+  transform: translateY(4px);
+  transition: opacity 0.45s ease, transform 0.35s ease, transition 0.82s ease;
+}
+.sugerencia.mostrar {
+  opacity: 1;
+  transform: translateY(0);
+}
+.sugerencia img{
+  width: 4vmax;
+  height: 4vmax;
+  object-fit:cover;
+  border-radius: 6px;
+  image-rendering: -webkit-optimize-contrast; /* Chrome */
+  image-rendering: crisp-edges; /* otros */
+}
+.sugerencia:not(.span-2) span{
+  color: black;
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-family: 'jost', sans-serif;
+}
+.span-2{
+  font-size: 1rem !important;
+  font-family: 'jost', sans-serif;
+}
+
+/* Aquí la sección que dice "seccion hombres" o "seccion mujeres" ****** */
+.guia{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: .7rem;
+  font-style: normal;
+  font-optical-sizing: auto;
+  color: rgba(0, 0, 0, 0.665);
+}
+.guia span{
+  color: rgba(0, 0, 0, 0.79);
+  font-weight: 600;
+}
+.hero{
+    margin-top: 4.5rem;
+}
+.hero-c span{
+  font-size: 3.5rem;
+}
+.msj-seccion{
+    font-family: "Atkinson Hyperlegible Next", serif;
+    font-size: 2.8rem;
+    font-style: normal;
+    font-optical-sizing: auto;
+    font-weight: 500;
+}
+
+/* Aquí haremos la sección de FILTROS *************** */
+.filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background: transparent;
+  padding: 15px;
+  font-family: Arial, sans-serif;
+  font-style: normal;
+  transition: all 0.5s ease;
+}
+.filter-dropdown {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+.filter-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.filtrar {
+  display: flex;
+  padding: 10px 10px 4px;
+  margin: 0;
+  border-radius: 5%;
+  font-weight: 500;
+  color: #000000;
+  text-shadow: none;
+  background: transparent;
+  cursor: pointer;
+  box-shadow: transparent;
+  border: 1px solid transparent;
+  transition: 0.5s ease;
+  user-select: none;
+  max-height: 2.8rem;
+}
+.filtrar .icono{
+  position:relative;
+  margin: 0 !important;
+  margin-top: 1px !important;
+  padding: 0 !important;
+}
+.filtrar:hover, .filtrar:focus {
+  background: transparent;
+  border: 1px solid #008cff;
+  box-shadow: 0 0 1px #49aaf9, 0 0 4px #49aaf9, 0 0 6px #49aaf9,
+    0 0 10px #49aaf9;
+}
+.text-filtrar{
+  font-size: 1rem;
+  font-weight: 500;
+}
+.filter-dropdown-menu {
+  position: absolute;
+  top: 90%;
+  left: 0;
+  background: #F8F5F0;
+  border: 1px solid #ccc;
+  border-radius: 2%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  margin-top: 5px;
+  width: 250px;
+  z-index: 10;
+  text-align: center;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, opacity 0.4s ease-out, visibility 0.4s ease-out;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+.filter-dropdown-menu::-webkit-scrollbar{
+  display: none;
+}
+/* Esto se agrega para que al sacar el puntero, desaparezca el menú ya que por el focus del móvil se mantiene */
+.filter-dropdown:not(:hover) .filter-dropdown-menu:not(:hover) {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+/* Mostrar menú al pasar el mouse o enfocar */
+.filter-dropdown:hover .filter-dropdown-menu,
+.filter-dropdown:focus-within .filter-dropdown-menu {
+  max-height: 24rem;
+  opacity: 1;
+  visibility: visible;
+}
+.filter-header {
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.29);
+  font-size: 1rem;
+  color: #000000;
+  font-stretch: 1;
+  width: 100%;
+  text-align: left;
+  padding: 10px 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.opciones {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  color: rgba(0, 0, 0, 0.687);
+}
+.opciones li {
+  padding: 5px;
+  text-align: left;
+}
+.arrow {/* Crea una flecha hacia abajo */
+  transition: transform 0.3s ease;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  transform: rotate(45deg); /* La rota hacia abajo, rotelo socio roteloo */
+  margin-left: 10px;
+}
+.tallas-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas de igual tamaño */
+  gap: 5px;
+}
+/* Mostrar contenido activo para js*/
+.filter-options.active .opciones {
+  max-height: 200px;
+  transition: max-height 0.3s ease-in;
+  overflow-y: auto;
+  scrollbar-width: none; 
+}
+.opciones::-webkit-scrollbar {
+    display: none;
+  }
+.filter-options.active .arrow {
+  transform: rotate(225deg);
+}
+/* aqui el boton de aplicar */
+.aplicar {
+  width: 70%;
+  padding: 10px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+.aplicar:hover{
+  background-color: transparent;
+  color: #000000;
+  border: 2px solid #000000;
+  box-shadow: 0px 0px 10px 2px rgb(215, 166, 215);
+}
+.aplicar:active{
+  transform: scale(0.95);
+}
+
+/* aquí el filtro de colores y derivados */
+.color-options {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos pasen a una nueva línea */
+  max-width: 100%;
+  gap: 5px;
+}
+.color-btn {
+  width: 24px;
+  height: 24px;
+  border: 1px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.color-btn.activo {
+  border: 3px solid #fff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.5); /* Efecto de agrandado */
+  transition: all 0.3s ease-in-out;
+}
+
+/* aquí el boton "borrar filtros" */
+.borrarFiltros{
+  border: 1px solid #00000034;
+  cursor: pointer;
+  background-color: transparent;
+  max-height: 3rem;
+  padding: 0.6rem;
+  border-radius: 3px;
+  opacity: 0; /* Inicialmente invisible */
+  visibility: hidden; /* Oculta el botón pero mantiene su espacio */
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+.borrarFiltros:hover {
+  background: transparent;
+  border: 1px solid #f57f7f;
+  box-shadow: 0 0 1px #f57f7f, 0 0 4px #f57f7f, 0 0 6px #f57f7f,
+    0 0 10px #f57f7f;
+}
+
+/* Sección de Ordenar por */
+.sort-by {
+  display: inline-block;
+  position: relative;
+  align-items: center;
+  white-space: nowrap; /* Evita el salto de línea */
+  margin-left: auto;
+  width: 250px;
+}
+.sort-by:hover .select-options {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  max-height: 300px;
+}
+.sort-by:not(:hover) .select-options:not(:hover) {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+.select-btn {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  font-size: 1rem;
+  opacity: 0.8; /* Valores entre 0 (transparente) y 1 (opaco) */
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.5s ease;
+}
+.select-options {
+  position: absolute;
+  top: 90%;
+  left: 0;
+  width: 100%;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 5px;
+  margin: 5px 0; 
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out,transform 0.3s ease;
+  transform: translateY(-10px);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+  background-color: #F8F5F0;
+} 
+.select-options li {
+  margin: 20px;
+  line-height: 1;
+  text-align: left;
+  font-size: 0.95rem;
+  color: black;
+}
+.select-options li:hover {
+  text-shadow: 0.1px 0.1px 0.1px black;
+}
+.select-options.active {
+  max-height: 250px;
+  opacity: 1;
+  visibility: visible;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.select-options::-webkit-scrollbar {
+  display: none;
+}
+.select-options li {
+  padding: 1px;
+  cursor: pointer;
+}
+.selected::after {
+  content: " ✔";
+  color: black;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+/* *************************************************************************** */
+/* Aquí se trabaja la sección de productos, es decir, el catálogo*/
+/* *************************************************************************** */
+#mensaje-sin-resultados{
+  display: none;
+  min-height: 10vmax;
+  
+}
+#sin-productos{
+  display: grid;
+  place-items: center;
+  margin-left: 30vmax;
+  width: 30%;
+  margin-top: 4vmax;
+  margin-bottom: 4vmax;
+  font-family: "Merienda", serif;
+  font-size: 1.5rem;
+  text-align: center;
+  opacity: 0.5;
+  border: 4px double rgba(0, 0, 0, 0.535);
+  padding: 1rem;
+
+}
+
+.contenedor-productos{
+  gap: 28px;
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* contenedor padre individual de cada producto */
+.flip-card {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  width: 26rem;
+  perspective: 800px;
+  font-family: sans-serif;
+  min-height: 490px;
+  text-align: center;
+  transition: opacity 0.5s ease, transform 0.5s ease, height 0.3s ease;
+  }
+.flip-card.hidden {
+  opacity: 0;
+  transform: scale(0.8);
+  height: 0px;
+  overflow: hidden; /* Evita espacios en blanco */
+  transition: opacity 0.5s ease, transform 0.5s ease, height 0.3s ease;
+}
+.flip-card.removed { 
+  display: none !important; /* Oculta completamente tras la animación */
+}
+.flip-card.agotado {
+  opacity: 0.6;
+  pointer-events: none; /* bloquea clics si quieres */
+  position: relative;
+}
+
+.badge-agotado {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: red;
+  color: #fff;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: .9rem;
+  z-index: 10;
+}
+.oculto {
+  opacity: 0;
+  transform: scale(0.9);
+}
+h5.title {
+  font-size: 1.3em;
+  text-align: center;
+  margin: 0;
+  font-weight: normal;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  cursor: pointer;
+}
+.info-produc{
+  background-color: #F8F5F0;
+  height: 4rem;
+  position: relative !important;
+  text-align: center;
+  width: 100%;
+  font-weight: normal;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
+}
+.flip-card-inner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90%;
+  text-align: center;
+  object-fit: cover !important;
+}
+.flip-card-front img, 
+.flip-card-back img {
+  width: 80%;
+  max-height: auto;
+  object-fit: cover;
+  transition: transform 0.8s ease-in-out;
+  position: relative;
+  backface-visibility: hidden;
+}
+/* Mantener la imagen frontal visible */
+.flip-card-front img {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+/* Ocultar la imagen trasera al inicio */
+.flip-card-back img {
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+/* Efecto de giro SOLO en las imágenes */
+.flip-card-inner:hover .flip-card-front img {
+  transform: rotateY(-180deg);
+  z-index: 1; /* Ahora la imagen frontal queda atrás */
+}
+.flip-card-inner:hover .flip-card-back img {
+  transform: rotateY(0deg);
+  z-index: 2; /* La imagen trasera queda visible */
+}
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background-color: transparent;
+  object-fit: cover !important;
+}
+.agregar {
+  position: absolute;
+  bottom: 0.1rem;
+  left: 50%;
+  width: 70%;
+  height: 3.4em;
+  border-radius: 1.5rem;
+  border: 1px solid rgb(175, 205, 219);
+  background-color: rgb(246, 244, 244);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateX(-50%) translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
+  font-family: "Merienda", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  z-index: 3;
+}
+.flip-card-inner:hover .agregar {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+.agregar-content {
+  z-index: 3;
+}
+.agregar::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: rgb(234, 234, 234);
+  transform: scaleY(0);
+  transform-origin: 0 50%;
+  transition: all 0.315s;
+}
+.agregar:hover::before {
+  transform: scaleY(1);
+}
+
+
+/************* Pie de página *************************/
+.footer1{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(34, 33, 33);
+    width: 100%;
+  }
+  .footer{
+    display: flex;
+    background-color: rgb(34, 33, 33);
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 16px;
+    position: static;
+    padding-top: 20px;
+    padding-left: 25px;
+    gap: 50px;
+    width: auto;
+    line-height: 22px;
+  }
+  .footer p+span{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    font-optical-sizing: auto;
+    font-size: 14px;
+    color: rgb(210, 210, 210);
+  }
+.ubicacion{
+    width: 30%;
+  }
+.contacto{
+    width: 30%;
+  }
+.contacto span{
+  display: block;
+  margin-bottom: 1px;
+}
+  .redes{
+    width: 30%;
+  }
+  /* From Uiverse.io by javierBarroso */ 
+  .social-login-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 40px;
+    width: 230px;
+    height: 42px;
+    -webkit-box-reflect: below 5px linear-gradient(transparent, #00000055);
+  }
+  .social-login-icons svg {
+    width: 40px;
+  }
+  
+  .social-icon-1,
+  .social-icon-1-1,
+  .social-icon-2,
+  .social-icon-2-2,
+  .social-icon-3,
+  .social-icon-3-3
+   {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    margin: 20px 0 0px 0;
+  }
+  .icon svg {
+    fill: #111;
+  }
+  .socialcontainer {
+    height: 80px;
+    overflow: hidden;
+  }
+  .social-icon-1 {
+    transition-duration: 0.4s;
+    background-color: rgb(0, 0, 0);
+    transition-timing-function: cubic-bezier(0.46, -0.78, 0.5, 1.56);
+  }
+  .social-icon-1 svg,
+  .social-icon-2 svg,
+  .social-icon-3 svg
+  {
+    opacity: 0;
+    transition-duration: 0.5s;
+    transition-delay: 0.2s;
+  }
+  .social-icon-1-1 {
+    transition-duration: 0.4s;
+    background-color: rgb(0, 0, 0, 0);
+  }
+  .socialcontainer:hover .social-icon-1 {
+    transform: translateY(-70px);
+  }
+  .socialcontainer:hover .social-icon-1 svg,
+  .socialcontainer:hover .social-icon-2 svg,
+  .socialcontainer:hover .social-icon-3 svg {
+    opacity: 1;
+  }
+  .social-icon-2 {
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0.46, -0.78, 0.5, 1.56);
+    background: linear-gradient(
+      72.44deg,
+      #ff7a00 11.92%,
+      #ff0169 51.56%,
+      #d300c5 85.69%
+    );
+  }
+  .socialcontainer:hover .social-icon-2 {
+    transform: translateY(-70px);
+  }
+  .social-icon-3 {
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0.46, -0.78, 0.5, 1.56);
+    background: #316ff6;
+  }
+  .socialcontainer:hover .social-icon-3 {
+    transform: translateY(-70px);
+  }
+  .ultimo{
+    border-top: 2px solid #333;
+    display: flex;
+    background-color: rgb(34, 33, 33);
+    color: rgb(210, 210, 210);
+    padding-bottom: 14px;
+    padding-top: 20px;
+    padding-left: 20px;
+    width: auto;
+    gap: 20px;
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  span a{
+    text-decoration: none !important;
+    color: inherit;
+  }
+/* ================================= */
+  /* CSS del modal del carrito */
+/* ================================= */
+/* Fondo atenuado */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Color oscuro semitransparente */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  z-index: 997;
+}
+.overlay.visible {
+  opacity: 1;
+  visibility: visible;
+}
+/* Carrito flotante */
+#productoModal{
+  z-index: 500;
+}
+.modal-backdrop {
+  z-index: 499; /* uno menos que el modal */
+}
+.carrito-modal {
+  position: fixed;
+  right: -400px; /* oculto a la derecha */
+  top: 0;
+  width: 350px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: right 0.4s ease-in-out; /* Transición suave */
+}
+
+/* Cuando se abre */
+.carrito-modal.abierto {
+  right: 0; /* desliza a la vista */
+}
+.carrito-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.carrito-header.cart{
+  font-size: 1rem;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.carrito-header h5{
+  font-size: 1.3rem;
+  margin-left: -1rem;
+}
+.carrito-header, .carrito-footer {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1rem;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.carrito-footer p{
+  font-size: 1.3rem;
+  margin-left: 2rem;
+  font-family: "Markazi Text", serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2rem;
+  color: #111111c5;
+}
+.cerrar-carrito {
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  float: right;
+  cursor: pointer;
+}
+.checkout{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  height: 3rem;
+  width: 90%;
+  border-radius: 1.5rem;
+  margin: 0;
+}
+.checkout span{
+  color: white;
+}
+.candado{
+  font-size: 1.3rem;
+  margin-left: -3rem;
+  margin-right: 1.5rem;
+  align-items: center;
+}
+/* ============================ */
+/* Estilo para div que crea JS */
+/* ============================ */
+.carrito-contenido{
+  overflow: auto;
+}
+.producto-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.producto-img img {
+  width: 4rem;
+
+  border-radius: 8px;
+}
+
+.producto-info {
+  flex: 1;
+}
+
+.nombre {
+  font-family: "Merienda", serif;
+  margin: 0;
+}
+
+.talla, .precio-actual {
+  color: gray;
+  font-size: 0.9em;
+  margin-bottom: 0.5rem;
+}
+.padre_de_acciones{
+  display: flex;
+}
+.padre_de_acciones i {
+  cursor: pointer;
+  font-size: 3rem;
+  margin-left: 1rem;
+  margin-top: 0.8rem;
+  font-size: 1rem;
+  align-items: center;
+  justify-content: center;
+  color: #000000c4;
+}
+.acciones {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid gray;
+  border-radius: 1.5rem;
+  padding: 0.27rem;
+}
+.acciones button {
+  background: none;
+  border: 1px solid transparent;
+  padding: 0.25rem 0.21rem;;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.btn-menos, .btn-mas{
+  font-weight: bold;
+}
+.btn-eliminar i {
+  color: #dc3545;
+  font-size: 13px;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.producto-precio {
+  text-align: right;
+}
+.precio-anterior {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 0.9em;
+}
+.producto-mini{
+  justify-content: space-between;
+  position: relative;
+  margin: 0;
+  padding: auto;
+}
+.miniatura{
+  width: 60px;
+  height: auto;
+  min-height: 3rem;
+  max-height: 5rem;
+  margin-right: 1px;
+}
+.swal-zindex {
+  z-index: 99999 !important;
+}
+
+/* Demás cosas relacionadas con boot, js y todol o que no está 100% en el html */
+body.modal-open {
+  position: static !important;
+  overflow-y: hidden !important;
+  padding-right: 0 !important;
+  z-index: 900;
+}
+
+/* el botón de ir a comprar si no hay nada cargado */
+.btn-volver {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  background-color: black;
+  height: 3rem;
+  width: 85%;
+  border-radius: 1.5rem;
+  color: white;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding: 1.5rem 1rem;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-volver:hover {
+  background-color: #555;
+}
+/* *-*-*-*-*-* Responsive o Adaptable *-*-*-*-*-*-* */
+@media (max-width: 768px) {
+body {
+  min-height: 100dvh; /* o dvh si quieres que se ajuste dinámicamente */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+/* sección del header */
+.carousel-container{
+  height: 2rem;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.carousel-text {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.custom-header{
+  width: 100%;
+  min-height: 5.5rem;
+  padding: 0 !important;
+  top: 0 !important;
+  margin: 0 !important;
+  transition: all 0.5s ease;
+}
+.responsive{
+  width: 100%;
+  height: auto;
+  padding-top: 3%;
+}
+.navbar-brand{
+  margin-left: 0;
+}
+.titulo{
+  font-size: 1.3rem;
+  padding: 4%;
+  margin: 0 !important;
+}
+.navbar-toggler{
+  width: 10%;  
+  align-items: center;
+  justify-content: center;
+  padding: 2px !important;
+}
+.navbar-toggler-icon{
+  width: 90%;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+#navbarNav{
+  transition: all 0.6 ease-in-out;
+  align-items: center;
+  justify-content: center;
+  padding-left: 6%;
+  margin-left: 0;
+  font-weight: 600;
+}
+.navbar-nav li, a{
+  margin-top: 0 !important;
+  padding-top: 4px !important;
+}
+
+
+/********* Búsqueda y caja de reusltados **************/
+#search-box{
+  margin-left: 6% !important;
+}
+.border-none img{
+  width: auto;
+  height: auto;
+  margin-top: 2rem;
+}
+.msj-seccion{
+  font-size: 2.4rem;
+}
+/******* Modal del carrito y Overlay *******/
+.overlay, .carrito-modal {
+  height: calc(var(--vh, 1vh) * 100);
+}
+/********* sección de filtros **************/
+.filter-container{
+  width: 100%;
+  max-width: 100%;
+  margin: 0 !important;
+}
+.filter-dropdown{
+  width: 13%;
+}
+.filtrar{
+  padding: 6px !important;
+  margin: 0 !important
+}
+.filter-dropdown-menu{
+  left: 2px !important;
+  transform: translateX(1%);
+  padding: 10px;
+  width: 200px !important;
+}
+.filter-container span{
+  font-size: 0.93rem;
+}
+.filter-header{
+  width: 100%;
+}
+.aplicar{
+  margin-top: 1px !important;
+}
+.borrar-filtros{
+  width: 22%;
+  margin: 0 30px 0 30px;
+}
+.borrarFiltros{
+  padding: 6px !important;
+  width: 100% !important;
+  line-height: 16px !important;
+  margin: 0 !important;
+}
+.sort-by{
+  width: 60%;
+}
+.select-btn{
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 0.5rem;
+  align-items: center !important;
+  padding: 0 !important;
+}
+.label{
+  margin-right: -6px !important; ;
+  padding: 0 !important;;
+}
+#opcionSeleccionada{
+  width: 60%;
+  font-size: 0.9rem;
+  text-align: center;
+  white-space: normal;
+  word-wrap: break-word;
+  margin: 0 !important;
+}
+.select-options{
+  width: 90%;
+  padding: 2px !important;
+}
+.select-options li {
+  /* padding: 2px !important; */
+  margin: 10px !important;
+  font-size: 0.9rem;
+  white-space: normal;
+  word-wrap: break-word; 
+  overflow-wrap: break-word;
+}
+#mensaje-sin-resultados{
+  max-height: 300px !important;
+  width: 100% !important;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+#sin-productos{
+  justify-self: center;
+  height: 80%;
+  width: 80% !important;
+  margin: 0 !important;
+  padding: 14px !important;
+  font-size: 1.1rem;
+}
+
+/* sección de productos */
+.hero{
+  margin-top: 3rem;
+}
+.hero-c span{
+  font-size: 3rem;
+}
+.contenedor-productos{
+  width: 100% !important;
+  height: auto;
+  margin: 0;
+  margin-bottom: 4rem;
+  padding: 0;
+  column-gap: 70px;
+  row-gap: 20px;
+}
+.flip-card{
+  width: 35%;
+  min-height: 280px;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.flip-card-front img, .flip-card-back img{
+  margin-top: 0px !important;
+  padding-bottom: 0px !important;
+  height: 210px;
+  width: 170px;
+}
+.info-produc{
+  padding: 0 !important;
+  margin: 0 !important;
+}
+h5.title{
+    font-size: 1.1rem;
+}
+.agregar{
+  margin: 0 !important;
+  padding: 6px !important;
+  position: absolute;
+  opacity: 1;
+  height: auto;
+  width: 6rem;
+  transform: translateX(-50%) translateY(4px);
+  transition: opacity 0.1s ease, transform 0.1s ease;
+}
+/* ********* Ahora temas del carrito flotante ********* */
+#carrito-modal{
+  width: 60%;
+}
+.carrito-footer{
+  align-items: center;
+  justify-items: center;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+.carrito-footer p{
+  margin-left: 0;
+  font-size: 1.5rem;
+}
+.producto-item{
+  padding: 0.5rem 0.1rem 1rem 0.1rem !important;
+}
+.btn-eliminar i {
+  color: #dc3545;
+  font-size: 13px;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.checkout{
+  width: 96%;
+  padding: 0.5rem;
+  margin: 0;
+}
+.candado{
+  font-size: 1rem;
+  margin: 0;
+  margin-right: 10px;
+  padding: 0;
+}
+/* ***************Aquí inicia el footer********************** */
+.footer1{
+  font-size: 0.8rem;
+  width: 100%;
+  height: auto;
+  display: flex;
+  position: relative;
+  padding: 10px;
+  padding-left: 4px;
+  margin-top: 2% !important;
+}
+.footer1{
+  line-break: loose;
+}
+.footer{
+  font-size: 0.8rem;
+  width: 100%;
+  height: auto;
+  padding: 4px;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.contacto{
+  width: 53%;
+  line-height: 12px;
+  padding-left: 8px;
+}
+.contacto span{
+  display: block;
+  margin-bottom: 1px;
+  font-size: 0.65rem !important;
+  color: rgb(210, 210, 210);
+}
+.ubicacion{
+  line-height: 12px;
+  width: 45%;
+}
+.ubicacion span{
+  font-size: 0.65rem !important;
+}
+.redes{
+  width: 90%;
+  height: 3rem;
+  padding: 0;
+  margin-top: 1rem;
+}
+.social-login-icons{
+  width: 47%;
+  height: 50%;
+  margin-top: -6px;
+  gap: 1px;
+}
+.socialcontainer{
+  height: 70px;
+  width: 100%;
+  margin-top: -25px;
+  padding: 0;
+  justify-self: center;
+  align-items: center;
+}
+.ultimo{
+  padding: 0;
+  padding-left: 6px;
+  gap: 10px;
+}
+.ultimo span{
+ font-size: 0.5rem; 
+}
+}
+
+/* ================================================= */
+/* Para un movil más peque */
+/* ================================================= */
+@media (max-width: 334px) {
+.sort-by{
+  display: none;
+}
+.contenedor-productos{
+  column-gap: 10px;
+  row-gap: 10px;
+}
+.flip-card{
+  width: 45%;
+  overflow: visible;
+}
+.flip-card-front img, .flip-card-back img{
+  width: 100%;
+  max-height: 180px;
+  object-fit: contain;
+}
+.flip-card-front{
+  inset: 0;
+}
+.flip-card-back{
+  max-height: 180px;
+  inset: 0;
+}
+.flip-card-back img{
+  margin-top: -10px;
+  padding-top: -10px;
+}
+}

@@ -1,0 +1,216 @@
+/* ========================================================================= */
+/* DASHBOARD */ /* DASHBOARD */ /* DASHBOARD */ /* DASHBOARD */ /* DASHBOARD */
+/* ========================================================================= */
+
+/* Estilos generales */
+*{
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none !important;
+}
+main{
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+/* Efecto de fondo tipo telón */
+#page-transition-reverse {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    transform: scaleY(1);
+    transform-origin: bottom;
+    transition: transform 1.1s cubic-bezier(0.77, 0, 0.175, 1);
+    pointer-events: none;
+    background: linear-gradient( 120deg,
+    #000000,
+    #1a0000,
+    #4b0000,
+    #001c78,
+    #000000
+    );
+    background-size: 300% 300%;
+    animation: fondo 1.5s ease-in-out infinite;
+    pointer-events: none;
+
+}
+@keyframes fondo {
+  0% {
+    background-position: 10% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 10% 50%;
+  }
+}
+
+#page-transition-reverse.active {
+  transform: scaleY(0);
+}
+
+/* Fondos del dashboard con transición */
+.fondos{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+}
+.fondo-img{
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 5s ease-in-out;
+}
+
+.fondo-img:nth-child(1) { animation: fade 40s infinite 0s; }
+.fondo-img:nth-child(2) { animation: fade 40s infinite 10s; }
+.fondo-img:nth-child(3) { animation: fade 40s infinite 20s; }
+.fondo-img:nth-child(4) { animation: fade 40s infinite 30s; }
+
+@keyframes fade {
+  0% { opacity: 0; }
+  10% { opacity: 1; }   /* sube */
+  40% { opacity: 1; }   /* se mantiene visible */
+  50% { opacity: 0; }   /* baja */
+  100% { opacity: 0; }  /* fuera del ciclo */
+}
+
+/* Sección principal del dashboard/contenedor padre */
+#dashboard-ui{
+  position: absolute;
+  top: 3rem;
+  left: 10%;
+  backdrop-filter: blur(4px);
+  height: auto;
+  max-height: 90vh;
+  width: 80%;
+  border-top: 2px solid rgba(128, 128, 128, 0.313);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.349);
+  border-radius: 2rem;
+  box-shadow: 0 8px 42px 0 rgba(0, 0, 0, 0.37);
+  padding: 20px;
+  overflow: hidden !important;
+  overflow-y: visible;
+  overflow-x: scroll;
+}
+.layout-dashboard{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  gap: 1rem;
+  max-height: 90vh;
+  height: auto;
+}
+
+/* Menu izquierdo - Opciones del dashboard */
+.opciones{
+  width: clamp(2.5rem, calc(4vw + 2rem), 10rem);
+  background-color: rgba(108, 68, 172, 0.906);
+  border-radius: 2rem;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  min-height: 48.5rem;
+  max-height: 48.5rem;
+  height: 48.5rem;
+}
+.opciones div{
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+  width: 70%;
+  margin: 0 auto;
+  padding-bottom: 0.5rem;
+}
+.logo{
+  width: clamp(2rem, calc(2vw + 2rem), 6rem);
+  border-radius: 50%;
+  margin-top: 1rem;
+  margin-left: -5px;
+  border-bottom: 4px solid rgba(255, 255, 255, 0.349);
+}
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+li {
+  list-style: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 2rem;
+  transition: all 0.2s ease-in-out; /* para que los cambios sean suaves */
+}
+li.opcion-seleccionada {
+  background-color: #5632b9;
+  transform: scale(0.8);
+}
+li svg{
+  width: 3.5rem;
+  height: 3.5rem;
+  fill: white;
+  padding: 0.25rem;
+  border-radius: 2rem;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out, background-color 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+}
+
+li svg:hover{
+  box-shadow: 0 0 15px 2px rgba(255, 255, 255, 0.5);
+  transform: scale(1.1);
+}
+
+.opciones ul li:nth-child(5) svg{
+  margin-top: .5rem;
+}
+.opciones ul div:nth-child(1){
+  border-top: 2px solid rgba(255, 255, 255, 0.4);
+  border-bottom: none;
+  width: 70%;
+  margin: 9rem auto 0 auto ;
+  padding-bottom: 0;
+}
+
+/* Menu Derecho - Contenido del dashboard */
+.contenido-opciones{
+  border: 2px solid white;
+  border-radius: 2rem;
+  padding: 1rem;
+  width: 100%;
+  height: auto;
+  max-height: 48.55rem;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.vista-saliendo {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.vista-entrando {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+.tabla-productos th:nth-child(1),
+.tabla-productos td:nth-child(1) {
+  width: 10%; /* 10% del ancho total de la tabla */
+}
+
+
+/* *********************** responsive *********************** */
+@media only screen and (max-width: 768px) {
+  #eye-span{
+    top: 3.9vmax;
+    right: 1.7vmax;
+  }
+
+}
