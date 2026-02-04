@@ -7,6 +7,14 @@
   margin: 0;
   padding: 0;
 }
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden; /* Evita el scroll global de la página */
+}
+main {
+  height: 70vh; /* El main siempre medirá el alto de la pantalla */
+}
 a {
   text-decoration: none !important;
 }
@@ -86,28 +94,31 @@ main{
 /* Sección principal del dashboard/contenedor padre */
 #dashboard-ui{
   position: absolute;
-  top: 3rem;
-  left: 10%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   backdrop-filter: blur(4px);
-  height: auto;
-  max-height: 90vh;
-  width: 80%;
+  width: 90%;
+  height: 95%;
+  min-height: 95%;
   border-top: 2px solid rgba(128, 128, 128, 0.313);
   border-bottom: 2px solid rgba(255, 255, 255, 0.349);
   border-radius: 2rem;
   box-shadow: 0 8px 42px 0 rgba(0, 0, 0, 0.37);
   padding: 20px;
   overflow: hidden !important;
-  overflow-y: visible;
-  overflow-x: scroll;
 }
 .layout-dashboard{
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-template-rows: auto auto;
+  grid-template-rows: 100%;
   gap: 1rem;
-  max-height: 90vh;
-  height: auto;
+  height: 100%;
+  box-sizing: border-box;
+}
+.layout-dashboard > div {
+  min-width: 0;
+  overflow: hidden; /* O 'auto' si quieres que aparezca scroll interno */
 }
 
 /* Menu izquierdo - Opciones del dashboard */
@@ -115,12 +126,13 @@ main{
   width: clamp(2.5rem, calc(4vw + 2rem), 10rem);
   background-color: rgba(108, 68, 172, 0.906);
   border-radius: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   text-align: center;
   justify-content: center;
-  min-height: 48.5rem;
-  max-height: 48.5rem;
-  height: 48.5rem;
+  
 }
 .opciones div{
   border-bottom: 2px solid rgba(255, 255, 255, 0.4);
@@ -139,10 +151,10 @@ ul{
   list-style: none;
   padding: 0;
   margin: 0;
-  margin-top: 2rem;
+  margin-top: clamp(1rem, calc(1vw + 1rem), 2rem);
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: clamp(.5rem, calc(1vw + .1rem), 1rem);
 }
 li {
   list-style: none;
@@ -171,13 +183,13 @@ li svg:hover{
 }
 
 .opciones ul li:nth-child(5) svg{
-  margin-top: .5rem;
+  margin-top: clamp(0rem , calc(1vw + .5rem), .5rem);
 }
 .opciones ul div:nth-child(1){
   border-top: 2px solid rgba(255, 255, 255, 0.4);
   border-bottom: none;
   width: 70%;
-  margin: 9rem auto 0 auto ;
+  margin: clamp(.5rem, calc(1vw + .5rem), 9rem) auto 0 auto ;
   padding-bottom: 0;
 }
 
@@ -187,8 +199,9 @@ li svg:hover{
   border-radius: 2rem;
   padding: 1rem;
   width: 100%;
-  height: auto;
-  max-height: 48.55rem;
+  height: 100%;
+  overflow-y: auto;
+  box-sizing: border-box;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 .vista-saliendo {

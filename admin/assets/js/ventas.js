@@ -33,7 +33,7 @@ function initVentas() {
 
   // Ventas recientes (HOME)
   if (contRecientes) {
-    fetch(`${window.BASE_URL}/admin/ventas_model.php?tipo=recientes`)
+    fetch(`${window.BASE_URL}/ventas_model.php?tipo=recientes`)
       .then(res => res.json())
       .then(data => {
         if (data.status === "success") {
@@ -44,7 +44,7 @@ function initVentas() {
 
   // Ventas generales (VENTAS)
   if (contGenerales) {
-    fetch(`${window.BASE_URL}/admin/ventas_model.php?tipo=generales`)
+    fetch(`${window.BASE_URL}/ventas_model.php?tipo=generales`)
       .then(res => res.json())
       .then(data => {
         if (data.status === "success") {
@@ -59,7 +59,7 @@ function initVentas() {
 // 3. Mostrar detalle (AJAX)
 // ==============================
 function mostrarDetalle(ventaId) {
-  fetch(`${window.BASE_URL}/admin/detalle_venta_model.php?venta_id=${ventaId}`)
+  fetch(`${window.BASE_URL}/detalle_venta_model.php?venta_id=${ventaId}`)
     .then(res => res.json())
     .then(data => {
       if (data.status === "success") {

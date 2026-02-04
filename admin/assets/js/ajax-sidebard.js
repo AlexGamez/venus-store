@@ -48,7 +48,7 @@ function cargarSeccion(seccion) {
   cont.classList.add('vista-saliendo');
 
     setTimeout(() => {  
-      fetch(`${window.BASE_URL}/admin/pages/${seccion}.php`)
+      fetch(`${window.BASE_URL}/pages/${seccion}.php`)
     
         .then(res => {
             if (!res.ok) throw new Error('Error al cargar sección');

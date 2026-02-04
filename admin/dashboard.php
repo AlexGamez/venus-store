@@ -263,8 +263,7 @@ if (!in_array($pagina, $paginas_adicionales)) {
     </main>
 
 <script>
-    // Definir la URL base para uso en JavaScript
-    window.BASE_URL = "/mi_tienda";
+  window.BASE_URL = "<?php echo rtrim(dirname($_SERVER['SCRIPT_NAME']), ); ?>";
 </script>
 <!-- Ahora los scripts -->
 

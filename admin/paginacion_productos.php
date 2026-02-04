@@ -190,12 +190,12 @@ if ($result->num_rows > 0) {
             data-talla='".json_encode($tallasSolo)."'
             data-stock='".json_encode($stocksSolo)."'
             data-bs-toggle='modal' data-bs-target='#modalEditar'>
-            Editar✏️
+            ✏️
         </button>
 
         <button class='btn btn-danger btn-sm pe-1 mt-1'
             onclick='eliminarProducto(".$row['producto_id'].")'>
-            Borrar❌
+            ❌
         </button>
     </td>";
         echo "</tr>";

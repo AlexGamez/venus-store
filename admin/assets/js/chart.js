@@ -1,5 +1,5 @@
 function cargarGraficaVentas() {
-    fetch(`${window.BASE_URL}/admin/back-graficas.php`)
+    fetch(`${window.BASE_URL}/back-graficas.php`)
         .then(r => r.json())
         .then(data => {
 
@@ -95,9 +95,14 @@ function cargarGraficaVentas() {
 
                 options: {
                     responsive: true,
+                    maintainAspectRatio: false,
 
                     layout: {
-                        padding: { bottom: 45 }
+                        padding: { bottom: 5,
+                         top: 0,
+                         left: 0,
+                         right: 10
+                         }
                     },
 
                     animation: {
@@ -171,7 +176,7 @@ function cargarGraficaVentas() {
 
                         const titulo = "Total Recaudo";
                         const x = (chartArea.left + chartArea.right) / 2;
-                        const y = chartArea.bottom - (chartArea.height - 230);
+                        const y = chartArea.bottom - (chartArea.height + 42);
 
                         ctx.save();
                         ctx.textAlign = "center";

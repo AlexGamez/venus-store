@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     ventasBadge();
 });
-
 function ventasBadge() {
-    fetch(`${window.BASE_URL}/admin/back-graficas.php`)
+    console.log("Ancho: " + window.innerWidth + "px", "Alto: " + window.innerHeight + "px");
+
+    fetch(`${window.BASE_URL}/back-graficas.php`)
         .then(r => r.json())
         .then(data => {
             console.log('DATA BACKEND:', data);
