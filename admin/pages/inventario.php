@@ -30,13 +30,13 @@
                     <th>Descripción</th>
                     <th>Precio</th>
                     <th>Stock</th>
-                    <th>Imagen frontal</th>
-                    <th>Imagen trasera</th>
+                    <th>Img frontal</th>
+                    <th>Img trasera</th>
                     <th>Género</th>
                     <th>Tipo</th>
                     <th>Color</th>
                     <th>Talla</th>
-                    <th>Imagenes adicionales</th>
+                    <th>Img adicional</th>
                     <th>Fecha</th>
                     <th>New IN</th>
                     <th>Acciones</th>
