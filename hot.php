@@ -1,12 +1,12 @@
 <?php include './drivers/conexion.php'; ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Venus Store/Hombres</title>
-    <link rel="icon" type="image/x-icon" href="/img/icono.png">
+    <link rel="icon" type="image/x-icon" href="./img/icono.png">
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -20,15 +20,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;700&family=Bebas+Neue&family=DM+Serif+Text&family=Jost:wght@300;600&family=League+Spartan:wght@400;700&family=Libre+Franklin:wght@300;600&family=Merienda&family=Oswald:wght@400;700&family=Roboto:wght@400;700&family=Markazi+Text:wght@400..700&display=swap" rel="stylesheet">
    
     <!-- mi css -->
-    <link rel="stylesheet" href="/css/productos.css?v=<?= filemtime($_SERVER['DOCUMENT_ROOT'] . '/css/productos.css') ?>">
-    <link rel="stylesheet" href="/css/popup.css?v=<?= filemtime($_SERVER['DOCUMENT_ROOT'] . '/css/popup.css') ?>">
+    <link rel="stylesheet" href="./css/productos.css">
+    <link rel="stylesheet" href="./css/popup.css">
+    <!-- <link rel="stylesheet" href="/css/productos.css?v=<?= filemtime($_SERVER['DOCUMENT_ROOT'] . '/css/productos.css') ?>">
+    <link rel="stylesheet" href="/css/popup.css?v=<?= filemtime($_SERVER['DOCUMENT_ROOT'] . '/css/popup.css') ?>"> -->
     <!-- sweet alerts -->
      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
 </head>
 <body>
 <!--Botoncito de Whtsp -->
 <a href="https://wa.me/1234567890" class="whatsapp_float" target="_blank">
-<img src="/img/whatsapp.png" alt="WhatsApp" />
+<img src="./img/whatsapp.png" alt="WhatsApp" />
 </a>
 <!-- Header -->
 <div class="container-fluid bg-black carousel-container ">
@@ -37,7 +39,7 @@
 <header class="container-fluid custom-header">
     <nav class="navbar navbar-expand-md responsive">
         <div class="container responsive">
-            <a class="navbar-brand" href="/index.php">
+            <a class="navbar-brand" href="./index.php">
                 <span class="titulo ms-4">Venus Store</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,17 +48,17 @@
             <div class="collapse navbar-collapse ms-0" id="navbarNav">
             <ul class="navbar-nav flex-row ms-auto me-auto mb-2 mb-md-0">
                 <li class="nav-item p-2">
-                <a class="nav-link active" aria-current="page" href="/catalogo.php">TIENDA</a>
+                <a class="nav-link active" aria-current="page" href="./catalogo.php">TIENDA</a>
                 </li>
                 <li class="nav-item p-2">
-                <a class="nav-link active" href="/hombres.php">HOMBRES</a>
+                <a class="nav-link active" href="./hombres.php">HOMBRES</a>
                 </li>
                 <li class="nav-item p-2">
-                    <a class="nav-link active" href="/mujeres.php">MUJERES</a>
+                    <a class="nav-link active" href="./mujeres.php">MUJERES</a>
                 </li>
                 </li>
                 <li class="nav-item p-2">
-                    <a class="nav-link active" href="/hot.php" aria-disabled="true">HOT
+                    <a class="nav-link active" href="./hot.php" aria-disabled="true">HOT
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-fire mb-1" viewBox="0 0 16 16">
                         <path d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16m0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15"/>
                         </svg>
@@ -136,7 +138,7 @@
     </div>
     <div class="borrar-filtros">
         <button id="borrarFiltros" class="ms-2 d-flex borrarFiltros"><!-- Botón Borrar Filtros-->
-            <img src="img/remove-icon.svg" alt="remover-filtro">
+            <img src="./img/remove-icon.svg" alt="remover-filtro">
             <div class="text-filtrar">
                 <span>Borrar Filtros</span>
             </div>
@@ -347,8 +349,8 @@ if (!$result) {
 <br>
 <div class="ultimo">
 <span>© 2024, Venus Store</span>
-<span><a href="/cumplimiento.html">Aviso de Cumplimiento</a></span>
-<span><a href="/terminos.html">Términos y Condiciones</a></span>
+<span><a href="./cumplimiento.html">Aviso de Cumplimiento</a></span>
+<span><a href="./terminos.html">Términos y Condiciones</a></span>
 </div>
 </footer>
 <!-- ************* ================================  ================================ ***********-->
@@ -379,25 +381,24 @@ if (!$result) {
   </div>
     <div id="mensaje-vacio" style="display: flex; text-align:center; margin-bottom: 20rem;">
       <p>🛒 Ups, no has añadido nada aún</p>
-      <button id="volver-catalogo" class="btn-volver ms-4 mt-4" onclick="location.href='/catalogo.php'">CONTINUAR COMPRANDO</button>
+      <button id="volver-catalogo" class="btn-volver ms-4 mt-4" onclick="location.href='./catalogo.php'">CONTINUAR COMPRANDO</button>
     </div>
   <div class="carrito-footer">
     <p>Total: $<span id="carrito-total">0</span></p>
-    <a href="/carrito.php" class="ms-4 checkout">
+    <a href="./carrito.php" class="ms-4 checkout">
         <i class="fa-solid fa-lock candado" style="color: #ffffff;"></i>
         <span>PROCEDER AL PAGO</span>
     </a>
   </div>
 </div>
 
-
+<!-- Ruta global para busqueda de productos -->
+<script>
+  window.BASE_URL = "<?php echo rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'); ?>";
+</script>
 <!-- Aquí los scripts de Java -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="/java/text-moving.js"></script>
-<script src="/java/busqueda.js"></script>
-<script src="/java/filtros.js"></script>
-<script src="/java/mostrarDetalleProducto.js"></script>
- <script src="/java/carrito-final.js"></script>
-<script src="/java/carrito-burbuja.js"></script>
+<!-- mi js -->
+<script type="module" src="<?= BASE_URL ?>/java/main.js"></script>
 </body>
 </html>

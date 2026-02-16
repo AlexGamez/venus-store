@@ -1,12 +1,14 @@
 <?php include './drivers/conexion.php'; ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Venus Store/Hombres</title>
-    <link rel="icon" type="image/x-icon" href="/img/icono.png">
+    <!-- icono de la página -->
+    <link rel="icon" type="image/x-icon" href="./img/icono.png">
+
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -14,6 +16,7 @@
     <!-- icono de Font -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=tune" />
+    
     <!-- Fuente combinada en un solo enlace -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,13 +34,14 @@
 </head>
 <body>
 <!--Botoncito de Whtsp -->
-<a href="https://wa.me/1234567890" class="whatsapp_float" target="_blank">
+<a href="https://wa.me/+573171821403" class="whatsapp_float" target="_blank">
 <img src="./img/whatsapp.png" alt="WhatsApp" />
 </a>
 <!-- Header -->
 <div class="container-fluid bg-black carousel-container ">
     <div class="carousel-text " id="text-carousel">💖  Bienvenido a nuestra tienda  💖</div>
 </div>
+
 <header class="container-fluid custom-header">
     <nav class="navbar navbar-expand-md responsive">
         <div class="container responsive">
@@ -60,7 +64,7 @@
                 </li>
                 </li>
                 <li class="nav-item p-2">
-                    <a class="nav-link active" href="/hot.php" aria-disabled="true">HOT
+                    <a class="nav-link active" href="./hot.php" aria-disabled="true">HOT
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-fire mb-1" viewBox="0 0 16 16">
                         <path d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16m0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15"/>
                         </svg>

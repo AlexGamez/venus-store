@@ -1,37 +1,45 @@
+<?php include './drivers/conexion.php'; ?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Venus Store/Carrito</title>
-    <link rel="icon" type="image/x-icon" href="/img/icono.png">
+    <!-- icono de la página -->
+    <link rel="icon" type="image/x-icon" href="./img/icono.png">
+
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- icono de Font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=tune" />
+    
+    <!-- Fuente combinada en un solo enlace -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
-    <!-- Fuentes de Font -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=League+Spartan:wght@400;700&family=Libre+Franklin:wght@300;600&family=Merienda&family=Oswald:wght@400;700&family=Roboto:wght@400;700&family=Bebas+Neue&family=Jost:wght@300;600&family=Atkinson+Hyperlegible+Next:wght@400;700&display=swap" as="style">
-    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <!-- Fuente combinada en un solo enlace -->
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=League+Spartan:wght@400;700&family=Libre+Franklin:wght@300;600&family=Merienda&family=Oswald:wght@400;700&family=Roboto:wght@400;700&family=Bebas+Neue&family=Jost:wght@300;600&family=Atkinson+Hyperlegible+Next:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Ícono de Font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=tune" />
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;700&family=Bebas+Neue&family=DM+Serif+Text&family=Jost:wght@300;600&family=League+Spartan:wght@400;700&family=Libre+Franklin:wght@300;600&family=Merienda&family=Oswald:wght@400;700&family=Roboto:wght@400;700&family=Markazi+Text:wght@400..700&display=swap" rel="stylesheet">
+   
     <!-- mi css -->
-    <link rel="stylesheet" href="/css/carrito.css?v=<?= filemtime($_SERVER['DOCUMENT_ROOT'] . '/css/carrito.css') ?>">
-    
+    <link rel="stylesheet" href="./css/carrito.css">
+    <!-- <link rel="stylesheet" href="/css/carrito.css?v=<?= filemtime($_SERVER['DOCUMENT_ROOT'] . '/css/carrito.css') ?>"> -->
+
+    <!-- sweet alerts -->
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
 </head>
+
 <body>
 <!--Botoncito de Whtsp -->
 <a href="https://wa.me/1234567890" class="whatsapp_float" target="_blank">
-<img src="/img/whatsapp.png" alt="WhatsApp" />
+<img src="./img/whatsapp.png" alt="WhatsApp" />
 </a>
 <!-- Header -->
 <header class="container-fluid custom-header">
     <nav class="navbar navbar-expand-md responsive">
         <div class="container responsive">
-            <a class="navbar-brand" href="/index.php">
+            <a class="navbar-brand" href="./index.php">
                 <span class="titulo ms-4">Venus Store</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,17 +48,17 @@
             <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav flex-row ms-auto me-auto mb-2 mb-md-0">
                 <li class="nav-item p-2">
-                <a class="nav-link active" aria-current="page" href="/catalogo.php">TIENDA</a>
+                <a class="nav-link active" aria-current="page" href="./catalogo.php">TIENDA</a>
                 </li>
                 <li class="nav-item p-2">
-                <a class="nav-link active" href="/hombres.php">HOMBRES</a>
+                <a class="nav-link active" href="./hombres.php">HOMBRES</a>
                 </li>
                 <li class="nav-item p-2">
-                    <a class="nav-link active" href="/mujeres.php ">MUJERES</a>
+                    <a class="nav-link active" href="./mujeres.php ">MUJERES</a>
                 </li>
                 </li>
                 <li class="nav-item p-2">
-                    <a href="/hot.php" class="nav-link active" aria-disabled="true">HOT
+                    <a href="./hot.php" class="nav-link active" aria-disabled="true">HOT
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-fire mb-1" viewBox="0 0 16 16">
                         <path d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16m0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15"/>
                         </svg>
@@ -234,7 +242,7 @@
   </div>
 
 <!-- Pie de página -->
-<footer class="footer1 mt-5">
+<footer class="footer1">
     <div class="footer">
         <div class="ubicacion">
             <p>VENUS STORE</p>
@@ -342,17 +350,21 @@
 <br>
 <div class="ultimo">
 <span>© 2024, Venus Store</span>
-<span><a href="/cumplimiento.html">Aviso de Cumplimiento</a></span>
-<span><a href="/terminos.html">Términos y Condiciones</a></span>
+<span><a href="./cumplimiento.html">Aviso de Cumplimiento</a></span>
+<span><a href="./terminos.html">Términos y Condiciones</a></span>
 </div>
 </footer>
 
-<!-- SweetAlert2 -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="/java/carrito-final.js"></script>
-<script src="/java/carrito-burbuja.js"></script>
-<script src="/java/busqueda.js"></script>
-</body>
-</html>
+<!-- Ruta global para busqueda de productos -->
+<script>
+  window.BASE_URL = "<?php echo rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'); ?>";
+</script>
+
+<!-- Aquí los scripts de Java -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- mi js -->
+<script type="module" src="<?= BASE_URL ?>/java/main.js"></script>
+
 </body>
 </html>
