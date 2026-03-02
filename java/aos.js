@@ -4,6 +4,7 @@ AOS.init({
   easing: 'ease-in-out',
   once: true,
   offset: 20,
+  disable: 'mobile',
 });
 
 

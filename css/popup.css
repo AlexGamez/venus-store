@@ -42,16 +42,13 @@
 /* Ahora si, el div padre del modal que es popup */
 .modal-padre {
     background-color: white;
-    max-height: 40vmax;
     padding: 1rem;
-    overflow-y: auto;
     scrollbar-width: none;
     border-radius: 0.5rem;
-}
-
-.modal-padre::-webkit-scrollbar {
-    /* Chrome, Edge, Safari */
-    display: none;
+    overflow-y: auto;
+    border: 2px solid rgba(0, 0, 0, 0.575);
+    height: 90vh;
+    padding: .1rem !important;
 }
 
 .modal-padre button:not(.checkout-modal) {
@@ -59,8 +56,10 @@
 }
 
 .popup {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    padding: .4rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     gap: .5rem;
     position: relative;
     border: none;
@@ -71,7 +70,7 @@
     position: absolute;
     flex-direction: column;
     top: 7;
-    left: 0;
+    left: 1;
     width: 4rem;
     height: auto;
     display: flex;
@@ -110,8 +109,14 @@
 }
 
 /* contenedor de la foto principal */
+.popup-hijo{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+}
 .foto-popup {
-    width: 80%;
+    width: 40%;
     height: auto;
     margin-left: 4.5vmax;
     position: relative;
@@ -123,7 +128,6 @@
 .foto-popup img {
     width: 100%;
     object-fit: contain;
-    border-radius: .5rem;
     max-height: 400px;
     cursor: zoom-in !important;
 }
@@ -132,10 +136,9 @@
 .sub-contenido {
     display: flex;
     flex-direction: column;
-    width: 105%;
+    width: 52%;
     height: auto;
     padding: 1rem;
-
 }
 
 .modal-header-producto {
@@ -185,7 +188,7 @@
 .checkout-modal {
     background-color: rgb(211, 165, 213);
     height: 3rem;
-    width: 85%;
+    width: 70%;
     border-radius: 1.5rem;
     border: transparent;
     color: black;
@@ -244,7 +247,9 @@
 
 /* Div inferior */
 .data-inferior{
-    overflow-y: auto;
+    width: 100%;
+    display: block;
+    overflow: visible;
     height: auto;
 }
 
@@ -304,11 +309,14 @@
         margin: 0 !important;
         overflow: hidden;
     }
-
+    .popup-hijo{
+        flex-direction: column;
+        width: 100%;
+    }
     /* padre de carrusel */
     .carrusel-interno {
         flex-direction: row;
-        top: 28vmax;
+        top: 30vmax;
         width: 12rem;
     }
 
@@ -331,17 +339,21 @@
 
     /* contenedor de la foto principal */
     .foto-popup {
-        width: 100%;
+        width: 90%;
         height: 236px;
         padding: .7rem;
         margin: 0;
+        margin-top: 2vh;
+        justify-self: center;
+        align-self: center;
     }
 
     /* div padre derecho que contiene la info del producto */
     .sub-contenido {
         padding: .3rem;
+        margin-top: 8vh;
+        width: 100%;
     }
-
     /* nombre del producto */
     .modal-header-producto h5 {
         margin-top: 1rem;

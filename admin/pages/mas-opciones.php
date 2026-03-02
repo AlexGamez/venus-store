@@ -1,3 +1,3 @@
 <div>
-    hello there again
+    Diseños de la tienda -activar o desactivar-
 </div>

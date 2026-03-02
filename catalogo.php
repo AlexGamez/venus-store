@@ -413,15 +413,17 @@ if (!$result) {
   </div>
 </div>
 
+<!-- Aquí los scripts de Java -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Ruta global para busqueda de productos -->
 <script>
   window.BASE_URL = "<?php echo rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'); ?>";
 </script>
 
-<!-- Aquí los scripts de Java -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- mi js -->
 <script type="module" src="<?= BASE_URL ?>/java/main.js"></script>
+<script src="./java/filtros.js"></script>
 </body>
 </html>

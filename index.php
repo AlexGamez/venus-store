@@ -186,10 +186,10 @@ $result->close();
 $conn->close();
 ?>
 <!-- Secciones de New IN -->
-<section class="container mt-4 text-center contenedor-secciones"  data-aos="fade-up" data-aos-delay="200">
+<section class="container text-center mt-4 contenedor-secciones"  data-aos="fade-up" data-aos-delay="200">
 
   <!-- Hombres -->
-  <div class="container-fluid row justify-content-center sect activa" id="hombre">
+  <div class="container-fluid row sect activa" id="hombre">
     <?php if (empty($new_in_data['hombre'])) { ?>
       <p class="aviso">Pronto habrán más novedades</p>
     <?php } else { ?>
@@ -199,10 +199,10 @@ $conn->close();
           <div class="border-none flip-card"
             data-producto_id="<?= htmlspecialchars($p['producto_id']); ?>">
             
-            <img src="<?= htmlspecialchars($p['imagen']); ?>" class="img-fluid" alt="<?= htmlspecialchars($p['nombre']); ?>">
+            <img src="<?= htmlspecialchars($p['imagen']); ?>" class="" alt="<?= htmlspecialchars($p['nombre']); ?>">
             
             <div class="card-body mt-1">
-                <p class="card-title mt-1"><?= htmlspecialchars($p['nombre']); ?></p>
+                <p class="card-title-precio mt-1"><?= htmlspecialchars($p['nombre']); ?></p>
                 <p class="card-text mt-1">$<?= htmlspecialchars($p['precio']); ?></p>
                 <button class="ver">VER MÁS </button>
             </div>
@@ -236,7 +236,7 @@ $conn->close();
               
                 <img src="<?= $p['imagen']; ?>" class="img-fluid" alt="<?= htmlspecialchars($p['nombre']); ?>">
                 <div class="card-body mt-1">
-                    <p class="card-title mt-1"><?= htmlspecialchars($p['nombre']); ?></p>
+                    <p class="card-title-precio mt-1"><?= htmlspecialchars($p['nombre']); ?></p>
                     <p class="card-text mt-1">$<?= $p['precio']; ?></p>
                     <button class="ver m-auto">VER MÁS </button>
                 </div>
@@ -273,7 +273,7 @@ $conn->close();
           
             <img src="<?= $p['imagen']; ?>" class="img-fluid" alt="<?= htmlspecialchars($p['nombre']); ?>">
             <div class="card-body mt-1">
-              <p class="card-title mt-1"><?= htmlspecialchars($p['nombre']); ?></p>
+              <p class="card-title-precio mt-1"><?= htmlspecialchars($p['nombre']); ?></p>
               <p class="card-text mt-1">$<?= $p['precio']; ?></p>
               <button class="ver m-auto">VER MÁS </button>
             </div>
@@ -285,8 +285,8 @@ $conn->close();
 </section>
 <main>
 <!-- Título "compra por categoría" -->
-<div class="container text-center m-auto mt-5" data-aos="fade-up" >
-  <span class="display-10 p-3 mt-3 mb-3 by">COMPRA POR CATEGORÍA</span>
+<div class="container text-center m-auto mt-5 buy-by-category" data-aos="fade-up" >
+  <span class="display-10 p-3 mb-3 by">COMPRA POR CATEGORÍA</span>
 </div>
 
 <!-- ahora las tarjetas de las categorías -->
@@ -328,10 +328,6 @@ $conn->close();
   </div>
 </section>
 
-<!-- ahora un msj bonito para la labia -->
-    <!-- <div class="container-fluid mt-4 m-0 p-0 labia">
-        <img class="banner" src="./img/sin.png" alt="">
-    </div>   -->
 </main>
 <!-- Pie de página -->
 <footer class="footer1 mt-5" data-aos="fade-up" data-aos-once="true">
@@ -480,17 +476,21 @@ $conn->close();
   <div class="carrito-footer">
     <p>Total: $<span id="carrito-total">0</span></p>
     <a href="./carrito.php">
-        <button class="ms-4 checkout">
+        <button class="checkout">
         <i class="fa-solid fa-lock candado" style="color: #ffffff;"></i>
         PROCEDER AL PAGO
         </button>
     </a>
   </div>
 </div>
-<!-- URL global -->
+<!-- Aquí los scripts de Java -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Ruta global para busqueda de productos -->
 <script>
   window.BASE_URL = "<?php echo rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'); ?>";
 </script>
+
  <!-- Mi js -->
 <script type="module" src="<?= BASE_URL ?>/java/main.js"></script>
 <!-- Swiper -->

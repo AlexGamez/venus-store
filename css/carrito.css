@@ -42,6 +42,10 @@ font-optical-sizing: auto;
 .under{
 border-bottom: 1px solid #1111113b;
 }
+
+.accordion-collapse{
+  transition: height 0.35s ease;
+}
 /* A continuación Estilos de clases personalizadas */
 
 /*Configuración del botón Whstp*/
@@ -589,7 +593,16 @@ body {
   padding: 0 !important;
 }
 .producto-detalles{
+  display: block;
   margin-left: 0.3rem !important;
+  width: 30vw;
+  min-width: 0;
+}
+.productos{
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .carrito-contenido{
 width: 100%;
@@ -623,12 +636,12 @@ padding: 0 !important;
 }
 .botones{
   width: 100%;
-  padding: 4px 1px 4px 1px;
+  padding: 2px 1px 4px 1px;
   margin: 0 !important;
   margin-left: 0 !important;
   margin-bottom: 0.2rem !important; ;
 }
-.btn-eliminar i {
+.btn-eliminar {
   color: #dc3545;
   font-size: 11px;
   padding: 0 !important;
@@ -644,6 +657,9 @@ padding: 0 !important;
 .pasarela{
     margin-top: 0.8rem;
     width: 100%;
+}
+.papi-acordion{
+  overflow: hidden;
 }
 .accordion{
     width: 100%;

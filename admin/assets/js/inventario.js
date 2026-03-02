@@ -3,53 +3,60 @@
 // ============================================
 
 // Primero Para mostrar y ocultar el formulario de agregar producto
-function mostrarFormulario() {
-    document.getElementById("formularioAgregar").style.display = "block";
-}
+document.addEventListener("DOMContentLoaded", () => {
 
-function ocultarFormulario() {
-    document.getElementById("formularioAgregar").style.display = "none";
-}
+    const overlay = document.getElementById("overlayAgregar");
 
-// Ahora Enviar el formulario con AJAX sin recargar la página
-document.getElementById("formAgregarProducto").addEventListener("submit", function (e) {
-    e.preventDefault();
+    window.mostrarFormulario = () => {
+        overlay.classList.add("activo");
+    };
 
-    let formData = new FormData(this);
+    window.ocultarFormulario = () => {
+        overlay.classList.remove("activo");
+    };
 
-    // Mostrar en consola los valores enviados
-    for (let pair of formData.entries()) {
-        console.log(pair[0] + ": " + pair[1]);
+    const form = document.getElementById("formAgregarProducto");
+    if (form) {
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            let formData = new FormData(this);
+
+            // Mostrar en consola los valores enviados
+            for (let pair of formData.entries()) {
+                console.log(pair[0] + ": " + pair[1]);
+            }
+
+            const url_agregar = `${window.BASE_URL}/admin/procesar_agregar.php`;
+            fetch(url_agregar, {
+                method: "POST",
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    Swal.fire({
+                        title: data.status === "success" ? "¡Éxito!" : "Error",
+                        text: data.message,
+                        icon: data.status === "success" ? "success" : "error",
+                        confirmButtonText: "OK"
+                    }).then(() => {
+                        if (data.status === "success") {
+                            window.location.reload(); // Recargar la página solo si se agregó bien
+                        }
+                    });
+                })
+                .catch(error => {
+                    Swal.fire({
+                        title: "Error",
+                        text: "Hubo un problema en la solicitud",
+                        icon: "error",
+                        confirmButtonText: "OK"
+                    });
+                });
+        });
     }
 
-    const url_agregar = `${window.BASE_URL}/admin/procesar_agregar.php`;
-    fetch(url_agregar, {
-        method: "POST",
-        body: formData
-    })
-        .then(response => response.json())
-        .then(data => {
-            Swal.fire({
-                title: data.status === "success" ? "¡Éxito!" : "Error",
-                text: data.message,
-                icon: data.status === "success" ? "success" : "error",
-                confirmButtonText: "OK"
-            }).then(() => {
-                if (data.status === "success") {
-                    window.location.reload(); // Recargar la página solo si se agregó bien
-                }
-            });
-        })
-        .catch(error => {
-            Swal.fire({
-                title: "Error",
-                text: "Hubo un problema en la solicitud",
-                icon: "error",
-                confirmButtonText: "OK"
-            });
-        });
 });
-
 
 // ============================================
 // Función para buscar productos en mi Crud:
@@ -265,7 +272,7 @@ function abrirModalEditar(producto_id, nombre, descripcion, precio, imagen, imag
         agregarFilaTallaEditar(talla[i], stock[i]);
     }
     // Obtener imágenes adicionales desde PHP
-    const urlImg = `${window.BASE_URL}/admin/obtener_imagenes_adicionales.php?producto_id=${producto_id}`;
+    const urlImg = `${window.BASE_URL}/obtener_imagenes_adicionales.php?producto_id=${producto_id}`;
     fetch(urlImg)
         .then(res => {
             if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -302,8 +309,7 @@ document.getElementById("formEditarProducto").addEventListener("submit", functio
     e.preventDefault();
 
     const formData = new FormData(this);
-
-    fetch(`${window.BASE_URL}/admin/procesar_edicion.php`, {
+    fetch(`${window.BASE_URL}/procesar_edicion.php`, {
         method: "POST",
         body: formData
     })
@@ -357,7 +363,7 @@ function asignarEventosEditar() {
                     producto_id, nombre, descripcion, precio, imagen, imagen_back,
                     genero, tipo_producto, color, fecha, new_in, talla, stock
                 );
-            }, 300); // tiempo para que el DOM esté listo
+            }); // tiempo para que el DOM esté listo
         });
     });
 }

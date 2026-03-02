@@ -396,28 +396,23 @@ if (!$result) {
     </div>
   <div class="carrito-footer">
     <p>Total: $<span id="carrito-total">0</span></p>
-    <a href="/carrito.php" class="ms-4 checkout">
+    <a href="./carrito.php" class="ms-4 checkout">
         <i class="fa-solid fa-lock candado" style="color: #ffffff;"></i>
         <span>PROCEDER AL PAGO</span>
     </a>
   </div>
 </div>
+
+<!-- Aquí los scripts de Java -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Ruta global para busqueda de productos -->
 <script>
   window.BASE_URL = "<?php echo rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'); ?>";
 </script>
 
-<!-- Aquí los scripts de Java -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
 <!-- mi js -->
 <script type="module" src="<?= BASE_URL ?>/java/main.js"></script>
-
-<!-- <script src="/java/text-moving.js"></script>
-<script src="/java/busqueda.js"></script>
-<script src="/java/filtros.js"></script>
-<script src="/java/mostrarDetalleProducto.js"></script>
- <script src="/java/carrito-final.js"></script>
-<script src="/java/carrito-burbuja.js"></script> -->
+<script src="./java/filtros.js"></script>
 </body>
 </html>

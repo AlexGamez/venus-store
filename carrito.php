@@ -136,11 +136,11 @@
         <div class="row g-2">
           <div class="col-md-6">
             <label class="form-label" for="name"></label>
-            <input type="text" class="form-control" id="nombre" name="nombre" required placeholder="Nombres">
+            <input type="text" class="form-control" id="nombre" name="nombre" required placeholder="Nombre Completo">
           </div>
           <div class="col-md-6">
             <label class="form-label" for="apellido"></label>
-            <input type="text" class="form-control" id="apellido" name="apellido" required placeholder="Apellidos">
+            <input type="text" class="form-control" id="apellido" name="apellido" required placeholder="Num. de identificación" inputmode="numeric" pattern="[0-9]+" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
           </div>
         
         <!-- dirección y ciudad -->

@@ -33,7 +33,7 @@ function acceder(e) {
                 pageTransition.classList.add("active");
             
                 setTimeout(() => {
-                    window.location.href ="/mi_tienda/admin/dashboard.php";
+                    window.location.href ="/venus-store/admin/dashboard.php";
                 }, 1100);
         });
         }

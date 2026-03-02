@@ -6,18 +6,22 @@
   height: 100vh;
 }
 .header {
-  display: flex;
-  justify-content: space-between;
-  background-color: rgba(255, 255, 255, 0.618);
-  width: auto;
+  background: linear-gradient(to top, rgba(208, 208, 208, 0.621), rgba(255, 255, 255, 0.621));
   border: 2px solid rgba(108, 68, 172, 0.906);
-  padding: .8rem 2.5rem .8rem 2.5rem;
   border-radius: 1.3rem;
+  padding: 1rem;
+  padding-bottom: 2rem;
+  margin-top: .5rem;
+  height: calc(100% - 80px);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  scrollbar-width: none;
 }
 
 .totales {
   display: block;
-  width: 98%;
+  width: 100%;
   height: 70vh;
   overflow-y: auto;
   scrollbar-width: none;
@@ -61,7 +65,7 @@
 }
 
 .body-generales .titulos {
-  color: black;
+  color: rgba(108, 68, 172, 0.906);
 }
 
 /* contenedor titulos */
@@ -113,6 +117,30 @@
 
 .body-generales .ventas-titulos th.orden-desc::after {
   content: " ▼";
+}
+
+/* sección hero */
+.ventas-contenido {
+    background: linear-gradient(to top, rgba(208, 208, 208, 0.621), rgba(255, 255, 255, 0.621));
+    border: 2px solid rgba(108, 68, 172, 0.906);
+    border-radius: 1.3rem;
+    padding: 1rem;
+    margin-top: .5rem;
+    height: calc(86.5% - 80px);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.ventas-contenido::-webkit-scrollbar {
+    display: none;
+}
+
+.ventas-contenido p {
+    font-weight: 600;
+    margin-left: .2rem;
+    line-height: 1px;
 }
 
 .uno {
@@ -178,4 +206,11 @@
 
 .detalle-venta li img {
   border-radius: 1rem;
+}
+
+/* Para portatil */
+@media only screen and (max-width: 768px) {
+  /* .tabla-scroll {
+  height: 65vh; 
+  }*/
 }

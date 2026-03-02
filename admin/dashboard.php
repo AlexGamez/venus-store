@@ -98,10 +98,6 @@ if (!in_array($pagina, $paginas_adicionales)) {
             </div>
         </section>
 
-
-
-
-
         <!-- ============================================================================== -->
         <!-- Sección para los Modales -->
         <!-- ============================================================================== -->
@@ -110,83 +106,106 @@ if (!in_array($pagina, $paginas_adicionales)) {
         <!-- Modal para agregar productos -->
         <!-- ================================= -->
         <section id="modalAgregar">
-            <div id="formularioAgregar" style="display: none;" class="container mt-4 mb-4">
-                <h3>Agregar Producto</h3>
-                <form id="formAgregarProducto" enctype="multipart/form-data">
-                    <label>Nombre:</label>
-                    <input type="text" name="nombre" class="form-control" required>
+            <div id="overlayAgregar">
+                <div id="formularioAgregar" class="container">
+                    <h3>Agregar Producto</h3>
+                    <form id="formAgregarProducto" enctype="multipart/form-data" class="form-grid">
 
-                    <label>Descripción:</label>
-                    <textarea name="descripcion" class="form-control" required></textarea>
-
-                    <label>Precio:</label>
-                    <input type="number" name="precio" step="0.01" class="form-control" required>
-
-                    <label>Imagen Frontal (opcional):</label>
-                    <input type="text" name="imagen" class="form-control" placeholder="URL del archivo en mi tienda">
-
-                    <label>Imagen Trasera (opcional):</label>
-                    <input type="text" name="imagen_back" class="form-control"
-                        placeholder="URL del archivo en mi tienda">
-
-                    <label>Género:</label>
-                    <select name=">" class="form-control" required>
-                        <option value="hombre">Hombre</option>
-                        <option value="mujer">Mujer</option>
-                    </select>
-
-                    <label>Tipo:</label>
-                    <select name="tipo_producto" class="form-control" required>
-                        <option value="saco">Saco</option>
-                        <option value="otro">Otro</option>
-                    </select>
-
-                    <label>Color:</label>
-                    <input type="text" name="color" class="form-control" style="text-transform: lowercase;" required>
-
-                    <label>Talla y Stock</label>
-                    <div id="contenedor-tallas-stock">
-                        <div class="fila-talla-stock">
-                            <select name="talla[]" class="form-select talla-select" require>
-                                <option value="">Elige una talla</option>
-                                <option value="XS">XS</option>
-                                <option value="S">S</option>
-                                <option value="M">M</option>
-                                <option value="L">L</option>
-                                <option value="XL">XL</option>
-                                <option value="XXL">XXL</option>
-                            </select>
-                            <input type="number" name="stock[]" class="form-control stock-input" placeholder="Cantidad"
-                                min="0" required>
-                            <button type="button" class="btn btn-danger btn-sm eliminar-fila"
-                                style="display: none;">X</button>
+                        <div class="campo campo-full">
+                            <label>Descripción</label>
+                            <textarea name="descripcion" class="form-control" required></textarea>
                         </div>
-                    </div>
 
-                    <button type="button" class="btn btn-secondary mt-2" id="agregar-talla">+Agregar otra Talla y
-                        Stock</button><br>
+                        <div class="campo">
+                            <label>Nombre</label>
+                            <input type="text" name="nombre" class="form-control" required>
+                        </div>
 
-                    <label>Imagenes Adicionales:</label>
-                    <input type="text" name="imagenes_adicionales[]" class="form-control"
-                        placeholder="URL del archivo en mi tienda">
-                    <input type="text" name="imagenes_adicionales[]" class="form-control"
-                        placeholder="URL del archivo en mi tienda">
-                    <input type="text" name="imagenes_adicionales[]" class="form-control"
-                        placeholder="URL del archivo en mi tienda">
+                        <div class="campo">
+                            <label>Precio</label>
+                            <input type="number" name="precio" class="form-control" required>
+                        </div>
 
-                    <div class="mt-2 mb-2"
-                        style="border: 1px solid #65dee5ff; padding: 10px; border-radius: 5px; width: 30%;">
-                        <label for="fecha">Fecha:</label>
-                        <input type="date" name="fecha_ingreso" id="fecha_ingreso"></label>
+                        <div class="campo">
+                            <label>Color</label>
+                            <input type="text" name="color" class="form-control" style="text-transform: lowercase;"
+                                required>
+                        </div>
 
+                        <div class="campo">
+                            <label>Género:</label>
+                            <select name=">" class="form-control" required>
+                                <option value="hombre">Hombre</option>
+                                <option value="mujer">Mujer</option>
+                            </select>
+                        </div>
+
+                        <div class="campo">
+                            <label>Imagen Frontal (opcional):</label>
+                            <input type=" text" name="imagen" class="form-control"
+                                placeholder="URL del archivo en mi tienda">
+                        </div>
+
+                        <div class="campo">
+                            <label>Imagen Trasera (opcional):</label>
+                            <input type="text" name="imagen_back" class="form-control"
+                                placeholder="URL del archivo en mi tienda">
+                        </div>
+
+                        <div class="campo">
+                            <label>Imagenes Adicionales:</label>
+                            <input type="text" name="imagenes_adicionales[]" class="form-control"
+                                placeholder="URL del archivo en mi tienda">
+                            <input type="text" name="imagenes_adicionales[]" class="form-control"
+                                placeholder="URL del archivo en mi tienda">
+                            <input type="text" name="imagenes_adicionales[]" class="form-control"
+                                placeholder="URL del archivo en mi tienda">
+                        </div>
+
+                        <div class="campo">
+                            <label>Talla y Stock</label>
+                            <div id="contenedor-tallas-stock">
+                                <div class="fila-talla-stock">
+                                    <select name="talla[]" class="form-select talla-select" require>
+                                        <option value="">Elige una talla</option>
+                                        <option value="XS">XS</option>
+                                        <option value="S">S</option>
+                                        <option value="M">M</option>
+                                        <option value="L">L</option>
+                                        <option value="XL">XL</option>
+                                        <option value="XXL">XXL</option>
+                                    </select>
+                                    <input type="number" name="stock[]" class="form-control stock-input"
+                                        placeholder="Cantidad" min="0" required>
+                                    <button type="button" class="btn btn-danger btn-sm eliminar-fila"
+                                        style="display: none;">X</button>
+                                </div>
+                            </div>
+
+                            <button type="button" class="btn btn-secondary mt-2" id="agregar-talla">+Agregar otra Talla y Stock</button>
+                        </div>
                         
-                        <label for="new-in" class="ms-5">New IN</label>
-                        <input type="checkbox" name="destacado_newin" id="destacado_newin"></label>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-success mt-2">Guardar Producto</button>
-                    <button type="button" class="btn btn-secondary mt-2" onclick="ocultarFormulario()">Cancelar</button>
-                </form>
+                        <div class="campo">
+                            <label>Tipo:</label>
+                            <select name="tipo_producto" class="form-control" required>
+                                <option value="saco">Saco</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div style="display: flex; border: 1px solid #65dee5ff; padding: 10px; border-radius: 5px; width: 50%; justify-self: center; align-self: center; gap: .5rem;">
+                            <label for="fecha">Fecha:</label>
+                            <input type="date" name="fecha_ingreso" id="fecha_ingreso"></label>
+
+                            <label for="new-in">New IN</label>
+                            <input type="checkbox" name="destacado_newin" id="destacado_newin"></label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-success mt-2" id="btnGuardarProducto">Guardar Producto</button>
+                        <button type="button" class="btn btn-secondary mt-2" id="btnCancelarProducto"
+                            onclick="ocultarFormulario()">Cancelar</button>
+                    </form>
+                </div>
             </div>
         </section>
         <!-- ============================================================= -->
@@ -248,49 +267,49 @@ if (!in_array($pagina, $paginas_adicionales)) {
                                 </div>
                             </div>
 
-                                <div class="form-2">
-                                    <label class="description">Descripción:</label>
-                                    <textarea name="descripcion" id="editar_descripcion" class="form-control" required>
+                            <div class="form-2">
+                                <label class="description">Descripción:</label>
+                                <textarea name="descripcion" id="editar_descripcion" class="form-control" required>
                                     </textarea>
 
-                                    <div class="row mt-1">
-                                        <div class="col-md-6">
-                                            <label>Imagen frontal actual:</label>
-                                            <br>
-                                            <img id="editar_imagen_preview" class="img-thumbnail mb-2"
-                                                style="max-height: 101px; width= 100px; height= 100px;">
-                                                <br>
-                                            <label>URL imagen frontal:</label>
-                                            <input type="text" name="imagen" id="editar_imagen" class="form-control"
-                                                placeholder="https://drive.google.com/uc?id=...">
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <label>Imagen trasera actual:</label>
-                                            <br>
-                                            <img id="editar_imagen_back_preview" class="img-thumbnail mb-2"
-                                                style="max-height: 100px; width= 100px; height= 100px;">
-                                                <br>
-                                            <label>URL imagen trasera:</label>
-                                            <input type="text" name="imagen_back" id="editar_imagen_back"
-                                                class="form-control" placeholder="https://drive.google.com/uc?id=...">
-                                        </div>
+                                <div class="row mt-1">
+                                    <div class="col-md-6">
+                                        <label>Imagen frontal actual:</label>
+                                        <br>
+                                        <img id="editar_imagen_preview" class="img-thumbnail mb-2"
+                                            style="max-height: 101px; width= 100px; height= 100px;">
+                                        <br>
+                                        <label>URL imagen frontal:</label>
+                                        <input type="text" name="imagen" id="editar_imagen" class="form-control"
+                                            placeholder="https://drive.google.com/uc?id=...">
                                     </div>
-                                    <br>
-                                    <label>Imagenes Adicionales:</label>
-                                    <input type="text" name="imagenes_adicionales[]" id="editar_imagenes_adicionales_1"
-                                        class="form-control" placeholder="URL del archivo en mi tienda 1">
-                                    <input type="text" name="imagenes_adicionales[]" id="editar_imagenes_adicionales_2"
-                                        class="form-control" placeholder="URL del archivo en mi tienda 2">
-                                    <input type="text" name="imagenes_adicionales[]" id="editar_imagenes_adicionales_3"
-                                        class="form-control" placeholder="URL del archivo en mi tienda 3">
-                                </div>
 
-                                <div class="modal-footer mt-1 p-0">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Cancelar</button>
-                                    <button type="submit" class="btn btn-success">Guardar Cambios</button>
+                                    <div class="col-md-6">
+                                        <label>Imagen trasera actual:</label>
+                                        <br>
+                                        <img id="editar_imagen_back_preview" class="img-thumbnail mb-2"
+                                            style="max-height: 100px; width= 100px; height= 100px;">
+                                        <br>
+                                        <label>URL imagen trasera:</label>
+                                        <input type="text" name="imagen_back" id="editar_imagen_back"
+                                            class="form-control" placeholder="https://drive.google.com/uc?id=...">
+                                    </div>
                                 </div>
+                                <br>
+                                <label>Imagenes Adicionales:</label>
+                                <input type="text" name="imagenes_adicionales[]" id="editar_imagenes_adicionales_1"
+                                    class="form-control" placeholder="URL del archivo en mi tienda 1">
+                                <input type="text" name="imagenes_adicionales[]" id="editar_imagenes_adicionales_2"
+                                    class="form-control" placeholder="URL del archivo en mi tienda 2">
+                                <input type="text" name="imagenes_adicionales[]" id="editar_imagenes_adicionales_3"
+                                    class="form-control" placeholder="URL del archivo en mi tienda 3">
+                            </div>
+
+                            <div class="modal-footer mt-1 p-0">
+                                <button type="button" class="btn btn-secondary"
+                                    data-bs-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-success">Guardar Cambios</button>
+                            </div>
                         </form>
                     </div>
                 </div>

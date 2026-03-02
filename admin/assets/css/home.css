@@ -573,3 +573,11 @@ h3 {
         display: none;
     }
 }
+
+
+/* Para portatil */
+@media only screen and (max-width: 768px) {
+  /* .tabla-scroll {
+  height: 65vh;
+  } */
+}
