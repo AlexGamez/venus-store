@@ -4,7 +4,8 @@
     --line-main: rgb(200, 3, 173);
     --line-end: rgba(200, 3, 200, 0.17);
 
-    --fill-color: rgba(255, 255, 255, 0.488);  /* color del fondo de la línea que muestra la trayectoria de datos si aplica según tipo de grafica */
+    --fill-color: rgba(255, 255, 255, 0.488);
+    /* color del fondo de la línea que muestra la trayectoria de datos si aplica según tipo de grafica */
 }
 
 
@@ -52,7 +53,7 @@ header {
     background-color: rgba(255, 255, 255, 0.618);
     width: auto;
     border: 2px solid rgba(108, 68, 172, 0.906);
-    padding: .8rem 2.5rem .8rem 2.5rem;
+    padding: 0.5rem 1.1rem 0.5rem 1.4rem;
     border-radius: 1.3rem;
 }
 
@@ -92,7 +93,7 @@ header input:focus {
 }
 
 .utilidades-home svg {
-    background-color:  rgba(108, 68, 172, 0.906);
+    background-color: rgba(108, 68, 172, 0.906);
     fill: rgb(255, 255, 255);
     width: 2rem;
     height: 2rem;
@@ -180,12 +181,20 @@ h3 {
     justify-content: space-between;
 }
 
-.datos-div-2-sub-1, .datos-div-2-sub-2, .datos-div-3-sub-1, .datos-div-3-sub-2 {
-    width: 100%;        /* Deja que se expandan en su columna */
+.datos-div-2-sub-1,
+.datos-div-2-sub-2,
+.datos-div-3-sub-1,
+.datos-div-3-sub-2 {
+    width: 100%;
+    /* Deja que se expandan en su columna */
     height: 100%;
-    min-width: clamp(2rem, calc(8vw + 4rem), 15rem);   /* Pero que no se encojan tanto que no se lea */
-    max-height: clamp(1.5rem, calc(8vw), 10rem);   /* Reducimos un poco el alto para pantallas pequeñas */
+    min-width: clamp(2rem, calc(8vw + 4rem), 15rem);
+    /* Pero que no se encojan tanto que no se lea */
+    max-height: clamp(1.5rem, calc(8vw), 10rem);
+    /* Reducimos un poco el alto para pantallas pequeñas */
+    overflow: hidden;
 }
+
 /* Cuadro de total de ventas historico */
 .datos-div-2-sub-1 {
     display: grid;
@@ -194,12 +203,9 @@ h3 {
     background: linear-gradient(to bottom, white, rgba(174, 226, 244, 0.928));
     box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 1rem;
-    /* max-height: 10rem;
-    max-width: 14rem; */
-    /* width: 300px; */
     grid-row: auto;
     align-items: center;
-
+    overflow: hidden;
 }
 
 .datos-div-2-sub-1 svg {
@@ -224,10 +230,13 @@ h3 {
     font-size: .8rem;
     border-radius: 1rem;
     min-width: 3rem;
+    overflow: hidden;
 }
+
 #totalVentas {
     min-width: 6rem;
 }
+
 .total-ventas-texto span,
 .datos-div-2-sub-1 span {
     display: inline-block !important;
@@ -261,9 +270,6 @@ h3 {
     background: linear-gradient(to bottom, white, rgba(225, 147, 181, 0.97));
     box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.2);
     border-radius: 1rem;
-    /* max-height: 10rem;
-    max-width: 14rem;
-    width: 300px; */
     grid-row: auto;
     align-items: center;
 
@@ -324,9 +330,6 @@ h3 {
     background: linear-gradient(to bottom, white, rgba(225, 147, 181, 0.97));
     box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.2);
     border-radius: 1rem;
-    /* max-height: 10rem;
-    max-width: 14rem;
-    width: 300px; */
     grid-row: auto;
     align-items: center;
 
@@ -385,9 +388,6 @@ h3 {
     box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 1rem;
     height: auto;
-    /* max-height: 10rem;
-    max-width: 14rem;
-    width: 300px; */
     grid-row: auto;
     align-items: center;
 
@@ -450,14 +450,14 @@ h3 {
     justify-self: center;
 }
 
-.recientes div:first-child{
+.recientes div:first-child {
     display: flex;
     justify-content: space-between;
     padding: 0 .5rem;
     align-items: center;
 }
 
-#export{
+#export {
     display: inline;
     background-color: rgba(108, 68, 172, 0.906);
     border-radius: 1.5rem;
@@ -467,12 +467,14 @@ h3 {
     font-size: .8rem;
     border: none;
 }
-#export svg{
+
+#export svg {
     width: 1.2rem;
     height: 1.2rem;
     padding: 0;
     margin: 0;
 }
+
 .recientes h4 {
     text-align: left;
 }
@@ -486,11 +488,12 @@ h3 {
     overflow: hidden;
 }
 
-.ventas-header{
+.ventas-header {
     position: relative;
     z-index: 2;
     box-shadow: 0 4px 2px -2px rgba(171, 171, 171, 0.372);
 }
+
 /* titulos */
 .titulos {
     background-color: rgba(198, 195, 195, 0.822);
@@ -537,6 +540,7 @@ h3 {
     font-size: 12px;
     text-transform: capitalize;
 }
+
 .estado.pagado {
     padding: 6px 10px;
     border-radius: 999px;
@@ -546,6 +550,7 @@ h3 {
     font-size: 12px;
     text-transform: capitalize;
 }
+
 .estado.enviado {
     padding: 6px 10px;
     border-radius: 999px;
@@ -555,6 +560,7 @@ h3 {
     font-size: 12px;
     text-transform: capitalize;
 }
+
 .estado.cancelado {
     padding: 6px 10px;
     border-radius: 999px;
@@ -576,8 +582,50 @@ h3 {
 
 
 /* Para portatil */
-@media only screen and (max-width: 768px) {
-  /* .tabla-scroll {
-  height: 65vh;
-  } */
+@media screen and (min-width: 1025px) and (max-width: 1550px) {
+    header div:first-child{
+        padding: .1rem .3rem .1rem .3rem;
+    }
+    header input {
+        padding: 0.2rem .4rem 0.3rem 0;
+    }
+    .utilidades-home svg {
+        padding: 0.2rem;
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+    h3 {
+        margin-top: -10px !important;
+        font-size: 1.3rem;
+    }
+
+    .datos {
+        padding: 0;
+        height: auto;
+        min-height: 270px !important;
+    }
+
+    .datos-div-2-sub-1,.datos-div-2-sub-2, .datos-div-2-sub-3, .datos-div-2-sub-4, .datos-div-3-sub-1, .datos-div-3-sub-2, .datos-div-3-sub-3 svg {
+        padding: 0.7rem;
+    }
+
+    .datos-div-2-sub-1 svg, .datos-div-2-sub-2 svg, .datos-div-3-sub-1 svg, .datos-div-3-sub-2 svg {
+        padding: 0.1rem;
+    }
+    .datos-div-2-sub-1 span:not(#totalVentas), .datos-div-2-sub-2 span:not(.total-pedidos-texto span), .datos-div-3-sub-1 span:not(.total-visitas-texto span), .datos-div-3-sub-2 span:not(.total-clientes-texto span) 
+    {
+        font-weight: 700;
+        font-size: .7rem;
+    }
+    #totalVentas{
+        margin-top: .3rem;
+        font-size: 1rem;
+    }
+    .total-ventas-texto, .total-pedidos-texto, .total-visitas-texto, .total-clientes-texto{
+        margin-top: 1rem;
+    }
+    .total-ventas-texto span, .total-pedidos-texto span, .total-visitas-texto span, .total-clientes-texto span{
+        font-size: 1rem;    
+    }
 }
+

@@ -1,9 +1,5 @@
 /* ========================================================================= */
 /* DASHBOARD */
-/* DASHBOARD */
-/* DASHBOARD */
-/* DASHBOARD */
-/* DASHBOARD */
 /* ========================================================================= */
 
 /* Estilos generales */
@@ -20,16 +16,12 @@ body {
   /* Evita el scroll global de la página */
 }
 
-main {
-  height: 70vh;
-  /* El main siempre medirá el alto de la pantalla */
-}
-
 a {
   text-decoration: none !important;
 }
 
 main {
+  height: 70vh;
   background-color: transparent;
   padding: 0;
   margin: 0;
@@ -302,5 +294,34 @@ li svg:hover {
   }
   li{
     margin: 0;
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1550px) {
+  #dashboard-ui{
+    padding: 10px;
+  }
+  .opciones{
+    gap: 0 !important;
+    justify-content: space-between;
+  }
+  .logo{
+    margin-top: .7rem;
+    margin-bottom: 0rem;
+  }
+  #logout{
+    margin-top: 0;
+  }
+  ul{
+    margin-top: 0;
+    gap: 0 !important;
+  }
+  li {
+    padding: 0.2rem;
+    margin: .7rem 0;
+  }
+  li svg {
+    width: 3rem;
+    height: 3rem
   }
 }
