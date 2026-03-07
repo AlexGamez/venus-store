@@ -455,3 +455,12 @@
         margin-top: 2.8rem;
     }
 }
+/* Media para mi laptop */
+@media screen and (min-width: 1025px) and (max-width: 1550px) {
+    #productoModal {
+        margin-top: 0 !important;       
+    }
+    .foto-popup {
+        margin-left: 5vmax !important;
+  }
+}

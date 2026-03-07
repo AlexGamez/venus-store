@@ -583,19 +583,19 @@ i {
 }
 
 #sin-productos {
-  display: grid;
-  place-items: center;
-  margin-left: 25vmax;
-  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  margin: 0;
   margin-top: 4vmax;
-  margin-bottom: 2vmax;
+  width: 30%;
   font-family: "Merienda", serif;
   font-size: 1.5rem;
   text-align: center;
   opacity: 0.5;
   border: 4px double rgba(0, 0, 0, 0.535);
   padding: 1rem;
-
 }
 
 .contenedor-productos {

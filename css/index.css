@@ -1021,3 +1021,11 @@ i {
   display: none;
 }
 }
+/* Para laptops como la mías */
+
+/* Rango típico para laptops de 13" a 15" con escalado */
+@media screen and (min-width: 1025px) and (max-width: 1550px) {
+  .buy-by-category{
+    margin-top: 6.5rem !important;
+  }
+}
